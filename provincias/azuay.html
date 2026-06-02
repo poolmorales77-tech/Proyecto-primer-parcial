@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azuay - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Azuay 🏛️</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Cuenca</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">712,127</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">8,189 km²</div>
+                </div>
+            </div>
+            
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/azuay.jpg" alt="Paisaje de la Provincia de Azuay" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Azuay</h2>
+                <p>Azuay es una provincia andina ubicada en la sierra sur del Ecuador. Su capital, Cuenca, es patrimonio mundial de la UNESCO por su arquitectura colonial. Cuenca es conocida por su belleza arquitectónica, sus calles empedradas y su importante tradición en la elaboración de sombreros de paja toquilla y cerámica.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Cuenca es patrimonio mundial de la UNESCO desde 1999</li>
+                    <li>Tiene una de las catedrales más grandes de Sudamérica</li>
+                    <li>Los sombreros de paja toquilla se producen principalmente aquí</li>
+                    <li>El Río Tomebamba divide la ciudad en dos sectores históricos</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Centro Histórico de Cuenca</li>
+                    <li>Catedral Metropolitana</li>
+                    <li>Museo de la Concepción</li>
+                    <li>Plaza de Armas</li>
+                    <li>Puente del Vado</li>
+                    <li>Mercado 9 de Octubre</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Sopa de bolas</li>
+                    <li>Mote con queso</li>
+                    <li>Caldo de bola</li>
+                    <li>Papa a la cuencana</li>
+                    <li>Ajiaco cuencano</li>
+                    <li>Empanadas de viento</li>
+                </ul>
+            </div>
+
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Azuay?</h2>
+                <form id="quiz-azuay">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de Azuay?</b></label><br>
+                        <input type="radio" name="q1" value="Cuenca" data-correcta="true"> Cuenca<br>
+                        <input type="radio" name="q1" value="Quito"> Quito<br>
+                        <input type="radio" name="q1" value="Guayaquil"> Guayaquil
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué río divide la ciudad de Cuenca?</b></label><br>
+                        <input type="radio" name="q2" value="Tomebamba" data-correcta="true"> Tomebamba<br>
+                        <input type="radio" name="q2" value="Guayas"> Guayas<br>
+                        <input type="radio" name="q2" value="Napo"> Napo
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-azuay-resultado" style="margin-top: 15px; font-weight: bold;"></div>
+            </div>
+
+            <script src="../js/script.js"></script>
+            
+            <script>
+            document.getElementById('quiz-azuay').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('azuay')) {
+                    document.getElementById('quiz-azuay-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('azuay');
+                marcarProvinciaVisitada('azuay');
+            });
+            </script>
+        </div>
+    </div>
+</body>
+</html>

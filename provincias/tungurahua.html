@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tungurahua - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Tungurahua 🌋</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Ambato</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">504,583</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">3,334 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/tungurahua.jpg" alt="Paisaje de la Provincia de Tungurahua" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Tungurahua</h2>
+                <p>Tungurahua es una provincia ubicada en la sierra central del Ecuador, entre el Pichincha y Chimborazo. Su nombre significa "garganta de fuego" en Quichua. Ambato es su capital, conocida como la "Tierra de las Flores y de las Frutas". El Volcán Tungurahua es uno de los volcanes activos más peligrosos de Ecuador.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>"Tungurahua" significa "garganta de fuego" en idioma Quichua</li>
+                    <li>Ambato fue destruida por un terremoto en 1797 pero fue reconstruida</li>
+                    <li>El Volcán Tungurahua es uno de los volcanes más activos del Ecuador</li>
+                    <li>La provincia es conocida por sus frutas y flores</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Volcán Tungurahua</li>
+                    <li>Parque Montalvo en Ambato</li>
+                    <li>Baños (balneario termal)</li>
+                    <li>Cascada del Manto de la Novia</li>
+                    <li>Casa de la Cultura</li>
+                    <li>Mercado de flores</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Llapingachos</li>
+                    <li>Caldo de papa</li>
+                    <li>Colada morada</li>
+                    <li>Empanadas de verde</li>
+                    <li>Fritada</li>
+                    <li>Trucha a la sal</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Tungurahua con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Tungurahua?</h2>
+                <form id="quiz-tungurahua">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es el significado literal del nombre de la provincia en idioma Quichua?</b></label><br>
+                        <input type="radio" name="q1" value="agua"> Vertiente de agua sagrada<br>
+                        <input type="radio" name="q1" value="garganta" data-correcta="true"> Garganta de fuego<br>
+                        <input type="radio" name="q1" value="nieve"> Cumbre de nieve eterna
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Por qué apelativo tradicional es conocida su capital, Ambato, según la descripción provincial?</b></label><br>
+                        <input type="radio" name="q2" value="flores-frutas" data-correcta="true"> La "Tierra de las Flores y de las Frutas"<br>
+                        <input type="radio" name="q2" value="capital-ritmo"> La Capital del Ritmo y el Mar<br>
+                        <input type="radio" name="q2" value="ciudad-astros"> La Ciudad de los Astros y el Viento
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-tungurahua-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-tungurahua').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('tungurahua')) {
+                    document.getElementById('quiz-tungurahua-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('tungurahua');
+                marcarProvinciaVisitada('tungurahua');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

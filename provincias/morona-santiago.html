@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morona Santiago - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Morona Santiago 🏹</h1>
+                <p class="region">Región: Amazonia</p>
+            </div>
+
+            <div class="modelo-3d-container" style="text-align: center; margin: 20px auto; max-width: 400px;">
+                <h3 style="margin-bottom: 8px; font-size: 1.1em; color: #555;">Vista Interactiva 3D</h3>
+                <model-viewer 
+                    src="../3d/selva.glb" 
+                    alt="Modelo 3D de Morona Santiago" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 250px; background-color: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+                </model-viewer>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Macas</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">196,854</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">24,053 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/morona_santiago.jpg" alt="Paisaje de la Provincia de Morona Santiago" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Morona Santiago</h2>
+                <p>Morona Santiago es una provincia amazónica ubicada en el sureste del Ecuador. Su nombre proviene de dos ríos: Morona y Santiago. Macas es su capital, una ciudad importante en la frontera entre la sierra y la amazonia. La provincia es importante centro de biodiversidad y de pueblos indígenas como los Shuar.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>El pueblo Shuar es célebre por sus tradiciones ancestrales</li>
+                    <li>Es importante zona de frontera con Perú</li>
+                    <li>Tiene biodiversidad amazónica excepcional</li>
+                    <li>Macas es una importante puerta a la amazonia sur</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Comunidades indígenas Shuar</li>
+                    <li>Río Morona</li>
+                    <li>Catedral de Macas</li>
+                    <li>Cascadas</li>
+                    <li>Parque Sangay</li>
+                    <li>Turismo etnográfico</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Cazuela Shuar</li>
+                    <li>Ayampacos</li>
+                    <li>Chonta frita</li>
+                    <li>Caldo de pescado</li>
+                    <li>Yuca con salsa de camarón</li>
+                    <li>Tilapia al horno</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Morona Santiago con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8 rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Morona Santiago?</h2>
+                <form id="quiz-morona-santiago">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿De dónde proviene el nombre de esta hermosa provincia amazónica?</b></label><br>
+                        <input type="radio" name="q1" value="caciques"> Del nombre de dos caciques prehispánicos de la región<br>
+                        <input type="radio" name="q1" value="rios" data-correcta="true"> De dos ríos que la atraviesan: Morona y Santiago<br>
+                        <input type="radio" name="q1" value="volcanes"> De dos volcanes activos de la cordillera oriental
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de la provincia de Morona Santiago, considerada una importante puerta a la amazonía sur?</b></label><br>
+                        <input type="radio" name="q2" value="Macas" data-correcta="true"> Macas<br>
+                        <input type="radio" name="q2" value="Puyo"> Puyo<br>
+                        <input type="radio" name="q2" value="Tena"> Tena
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-morona-santiago-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-morona-santiago').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('morona-santiago')) {
+                    document.getElementById('quiz-morona-santiago-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('morona-santiago');
+                marcarProvinciaVisitada('morona-santiago');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

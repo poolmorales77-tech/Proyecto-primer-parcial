@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cañar - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Cañar 🏛️</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Azogues</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">271,841</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">3,908 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/cañar.jpg" alt="Paisaje de la Provincia de Cañar" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Cañar</h2>
+                <p>Cañar es una provincia ubicada en la sierra sur del Ecuador, entre Tungurahua y Azuay. Azogues es su capital, ubicada a 2,550 metros de altitud, con una hermosa arquitectura colonial. La provincia es conocida por sus textiles y artesanías indígenas.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Azogues tiene hermosas iglesias coloniales con arquitectura única</li>
+                    <li>Cañar fue un importante centro Inca</li>
+                    <li>Los textiles indígenas Cañari son famosos en todo Ecuador</li>
+                    <li>La provincia mantiene tradiciones indígenas muy vivas</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Basílica de Azogues</li>
+                    <li>Ruinas incaicas</li>
+                    <li>Mercado indígena</li>
+                    <li>Plaza de Armas</li>
+                    <li>Comunidades indígenas Cañari</li>
+                    <li>Sitios arqueológicos</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de papa</li>
+                    <li>Mote con queso</li>
+                    <li>Sopa de bola</li>
+                    <li>Empanadas de queso</li>
+                    <li>Cuy al horno</li>
+                    <li>Colada morada</li>
+                </ul>
+            </div>
+
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Cañar?</h2>
+                <form id="quiz-canar">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de la provincia de Cañar?</b></label><br>
+                        <input type="radio" name="q1" value="Azogues" data-correcta="true"> Azogues<br>
+                        <input type="radio" name="q1" value="Cuenca"> Cuenca<br>
+                        <input type="radio" name="q1" value="Guaranda"> Guaranda
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué cultura precolombina e incaica tuvo un importante centro arqueológico aquí?</b></label><br>
+                        <input type="radio" name="q2" value="Cañari" data-correcta="true"> Cañari / Inca<br>
+                        <input type="radio" name="q2" value="Chorrera"> Chorrera<br>
+                        <input type="radio" name="q2" value="Valdivia"> Valdivia
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-canar-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-canar').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('canar')) {
+                    document.getElementById('quiz-canar-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('canar');
+                marcarProvinciaVisitada('canar');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provincias del Ecuador - Aprende Jugando</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="site-header">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Logo"></a>
+                <div class="site-title-text">
+                    <h1>🗺️ Provincias del Ecuador</h1>
+                    <p>¡Haz clic en cualquier provincia para aprender sobre ella!</p>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="login.jsp" class="btn-control btn-azul">Iniciar sesión</a>
+                <a href="registro.jsp" class="btn-control btn-verde">Registrarse</a>
+            </nav>
+        </header>
+
+        <div class="mapa-ecuador" style="display: flex; justify-content: center; align-items: center;">
+            <div style="position: relative; display: inline-block;">
+                <img src="images/mapa.png" alt="Mapa de Ecuador" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);">
+                
+                <a href="provincias/azuay.html" class="provincia-link" style="position: absolute; top: 66%; left: 54%; color: #fff; font-weight: bold; text-decoration: none;">Azuay</a>
+                <a href="provincias/bolivar.html" class="provincia-link" style="position: absolute; top: 45%; left: 55%; color: #fff; font-weight: bold; text-decoration: none;">Bolívar</a>
+                <a href="provincias/canar.html" class="provincia-link" style="position: absolute; top: 59%; left: 55%; color: #fff; font-weight: bold; text-decoration: none;">Cañar</a>
+                <a href="provincias/carchi.html" class="provincia-link" style="position: absolute; top: 12%; left: 65%; color: #fff; font-weight: bold; text-decoration: none;">Carchi</a>
+                <a href="provincias/chimborazo.html" class="provincia-link" style="position: absolute; top: 55%; left: 53%; color: #fff; font-weight: bold; text-decoration: none;">Chimborazo</a>
+                <a href="provincias/cotopaxi.html" class="provincia-link" style="position: absolute; top: 36%; left: 56%; color: #fff; font-weight: bold; text-decoration: none;">Cotopaxi</a>
+                <a href="provincias/el-oro.html" class="provincia-link" style="position: absolute; top: 73%; left: 48%; color: #fff; font-weight: bold; text-decoration: none;">El Oro</a>
+                <a href="provincias/esmeraldas.html" class="provincia-link" style="position: absolute; top: 14%; left: 52%; color: #fff; font-weight: bold; text-decoration: none;">Esmeraldas</a>
+                <a href="provincias/galapagos.html" class="provincia-link" style="position: absolute; top: 60%; left: 10%; color: #000; font-weight: bold; text-decoration: none;">Galápagos</a>
+                <a href="provincias/guayas.html" class="provincia-link" style="position: absolute; top: 52%; left: 47%; color: #fff; font-weight: bold; text-decoration: none;">Guayas</a>
+                <a href="provincias/imbabura.html" class="provincia-link" style="position: absolute; top: 18%; left: 61%; color: #fff; font-weight: bold; text-decoration: none;">Imbabura</a>
+                <a href="provincias/loja.html" class="provincia-link" style="position: absolute; top: 81%; left: 50%; color: #fff; font-weight: bold; text-decoration: none;">Loja</a>
+                <a href="provincias/los-rios.html" class="provincia-link" style="position: absolute; top: 40%; left: 49%; color: #fff; font-weight: bold; text-decoration: none;">Los Ríos</a>
+                <a href="provincias/manabi.html" class="provincia-link" style="position: absolute; top: 35%; left: 45%; color: #fff; font-weight: bold; text-decoration: none;">Manabí</a>
+                <a href="provincias/morona-santiago.html" class="provincia-link" style="position: absolute; top: 60%; left: 64%; color: #fff; font-weight: bold; text-decoration: none;">Morona Santiago</a>
+                <a href="provincias/napo.html" class="provincia-link" style="position: absolute; top: 33%; left: 65%; color: #fff; font-weight: bold; text-decoration: none;">Napo</a>
+                <a href="provincias/orellana.html" class="provincia-link" style="position: absolute; top: 35%; left: 80%; color: #fff; font-weight: bold; text-decoration: none;">Orellana</a>
+                <a href="provincias/pastaza.html" class="provincia-link" style="position: absolute; top: 48%; left: 73%; color: #fff; font-weight: bold; text-decoration: none;">Pastaza</a>
+                <a href="provincias/pichincha.html" class="provincia-link" style="position: absolute; top: 24%; left: 58%; color: #fff; font-weight: bold; text-decoration: none;">Pichincha</a>
+                <a href="provincias/santa-elena.html" class="provincia-link" style="position: absolute; top: 55%; left: 35%; color: #fff; font-weight: bold; text-decoration: none;">Santa Elena</a>
+                <a href="provincias/santo-domingo.html" class="provincia-link" style="position: absolute; top: 27%; left: 48%; color: #fff; font-weight: bold; text-decoration: none;">Santo Domingo</a>
+                <a href="provincias/sucumbios.html" class="provincia-link" style="position: absolute; top: 23%; left: 78%; color: #fff; font-weight: bold; text-decoration: none;">Sucumbíos</a>
+                <a href="provincias/tungurahua.html" class="provincia-link" style="position: absolute; top: 42%; left: 60%; color: #fff; font-weight: bold; text-decoration: none;">Tungurahua</a>
+                <a href="provincias/zamora-chinchipe.html" class="provincia-link" style="position: absolute; top: 75%; left: 50%; color: #fff; font-weight: bold; text-decoration: none;">Zamora Chinchipe</a>
+            </div>
+        </div>
+
+        <div id="contenedor-ranking-global">
+            
+            <div class="columna-ranking">
+                <h2>🏆 Ranking Top 10</h2>
+                <table id="tabla-posiciones">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Jugador</th>
+                            <th>Puntaje</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla-ranking">
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="columna-controles">
+                <h3>👤 Partida Actual</h3>
+                <div class="info-jugador-activo">
+                    <p>Jugador: <strong id="nombre-jugador-activo">-</strong></p>
+                    <p>Puntos totales: <strong id="puntos-jugador-activo">0</strong></p>
+                </div>
+                
+                <button id="btn-reiniciar-partida" class="btn-control btn-azul">
+                    🔄 Jugar como Invitado
+                </button>
+            </div>
+
+        </div>
+    </div>
+    <div class="video-container" style="text-align: center; margin: 30px auto; max-width: 560px;">
+    <h2 style="margin-bottom: 15px;">Conoce más sobre el Ecuador</h2>
+    <iframe 
+        width="100%" 
+        height="315" 
+        src="https://www.youtube.com/embed/F9sGEXnbPRU" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen
+        style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+    </iframe>
+</div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <p>Síguenos:</p>
+            <div class="social-links">
+                <a href="https://github.com/poolmorales77-tech" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/pool-morales-9308a3409/" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
+

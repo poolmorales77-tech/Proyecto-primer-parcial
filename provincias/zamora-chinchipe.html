@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zamora Chinchipe - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Zamora Chinchipe 🦁</h1>
+                <p class="region">Región: Amazonia</p>
+            </div>
+
+            <div class="modelo-3d-container" style="text-align: center; margin: 20px auto; max-width: 400px;">
+                <h3 style="margin-bottom: 8px; font-size: 1.1em; color: #555;">Vista Interactiva 3D</h3>
+                <model-viewer 
+                    src="../3d/selva.glb" 
+                    alt="Modelo 3D de Zamora Chinchipe" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 250px; background-color: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+                </model-viewer>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Zamora</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">120,416</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">10,559 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/zamora.jpg" alt="Paisaje de la Provincia de Zamora Chinchipe" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Zamora Chinchipe</h2>
+                <p>Zamora Chinchipe es una provincia amazónica ubicada en el sureste del Ecuador, en la frontera con Perú. Su nombre proviene de dos ríos: Zamora y Chinchipe. Zamora es su capital, una ciudad fronteriza importante. La provincia es significativa por su biodiversidad, especialmente por sus aves, y sus comunidades indígenas.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Zamora Chinchipe tiene la mayor diversidad de aves de Ecuador</li>
+                    <li>Limita directamente con Perú</li>
+                    <li>Es importante zona de investigación científica</li>
+                    <li>Hogar de pueblos indígenas Shuar y Achuar</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Observatorio de aves</li>
+                    <li>Comunidades indígenas</li>
+                    <li>Río Zamora</li>
+                    <li>Cascadas</li>
+                    <li>Bosques nublados</li>
+                    <li>Reservas naturales</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Cazuela amazónica</li>
+                    <li>Ayampacos</li>
+                    <li>Chonta asada</li>
+                    <li>Caldo de camarones</li>
+                    <li>Tilapia a la sal</li>
+                    <li>Yuca frita</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Zamora Chinchipe con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Zamora Chinchipe?</h2>
+                <form id="quiz-zamora-chinchipe">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿De dónde proviene el nombre compuesto de esta provincia fronteriza?</b></label><br>
+                        <input type="radio" name="q1" value="caciques"> De dos caciques prehispánicos que defendieron la zona<br>
+                        <input type="radio" name="q1" value="rios" data-correcta="true"> De dos ríos: Zamora y Chinchipe<br>
+                        <input type="radio" name="q1" value="valles"> De dos valles interandinos que confluyen en la selva
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿En qué aspecto de la biodiversidad destaca especialmente esta provincia según sus curiosidades?</b></label><br>
+                        <input type="radio" name="q2" value="aves" data-correcta="true"> Tiene la mayor diversidad de aves de Ecuador<br>
+                        <input type="radio" name="q2" value="orquideas"> Posee la mayor cantidad de orquídeas endémicas del mundo<br>
+                        <input type="radio" name="q2" value="felinos"> Registra la mayor concentración de grandes felinos de América
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-zamora-chinchipe-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-zamora-chinchipe').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('zamora-chinchipe')) {
+                    document.getElementById('quiz-zamora-chinchipe-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('zamora-chinchipe');
+                marcarProvinciaVisitada('zamora-chinchipe');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

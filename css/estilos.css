@@ -1,0 +1,521 @@
+/* PROVINCIAS SOBRE MAPA - ENLACES INDIVIDUALES */
+.provincia-link {
+    font-size: 1.1em;
+    min-width: 60px;
+    text-align: center;
+    z-index: 2;
+    background: none !important;
+    border: none !important;
+    padding: 0;
+    transition: transform 0.2s, font-size 0.2s, color 0.2s;
+    cursor: pointer;
+    display: inline-block;
+}
+.provincia-link:hover {
+    transform: scale(1.25);
+    color: #3949ab;
+}
+
+@media (max-width: 900px) {
+    .provincia-link {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 600px) {
+    .mapa-ecuador img {
+        max-width: 100vw;
+        height: auto;
+    }
+    .provincia-link {
+        font-size: 0.75em;
+    }
+}
+
+/* Botones circulares sobre el mapa */
+.map-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #4ECDC4;
+    color: #fff;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 4px;
+}
+.map-btn:hover {
+    background: #38b2ac;
+    transform: scale(1.1);
+}
+
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', 'Arial Rounded MT Bold', cursive;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    animation: fadeIn 0.8s ease-in;
+}
+
+.header h1 {
+    font-size: 2.5em;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* SECCIÓN NUEVA: CONTENEDOR DE RANKING Y CONTROLES (Lado a Lado) */
+#contenedor-ranking-global {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 35px auto 10px auto;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    color: #fff;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    align-items: flex-start;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* COLUMNA IZQUIERDA: RANKING */
+.columna-ranking {
+    flex: 1.3;
+    min-width: 290px;
+}
+
+.columna-ranking h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#tabla-posiciones {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#tabla-posiciones th, #tabla-posiciones td {
+    padding: 12px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#tabla-posiciones th {
+    background: rgba(0, 0, 0, 0.25);
+    color: #ffe66d;
+    font-weight: bold;
+}
+
+#tabla-posiciones tr:last-child td {
+    border-bottom: none;
+}
+
+/* COLUMNA DERECHA: CONTROLES */
+.columna-controles {
+    flex: 1;
+    min-width: 260px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.columna-controles h3 {
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.info-jugador-activo {
+    background: rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.info-jugador-activo p {
+    font-size: 1.1em;
+}
+
+.info-jugador-activo strong {
+    color: #ffe66d;
+}
+
+/* BOTONES DE CONTROL */
+.btn-control {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Comic Sans MS', cursive;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 12px;
+    font-size: 14px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.btn-control:active {
+    transform: scale(0.98);
+}
+
+.btn-azul {
+    background: #4a5568;
+    color: #fff;
+    background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+}
+.btn-azul:hover {
+    background: linear-gradient(135deg, #63b3ed 0%, #4299e1 100%);
+}
+
+.btn-rojo {
+    color: #fff;
+    background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);
+}
+.btn-rojo:hover {
+    background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+}
+
+/* MAP INTERACTIVE SVG STYLES */
+svg {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+.provincia-path {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    stroke: #fff;
+    stroke-width: 2;
+}
+
+.provincia-path:hover {
+    filter: brightness(1.2);
+    stroke-width: 3;
+}
+
+.provincia-label {
+    pointer-events: none;
+    font-size: 0.7em;
+    font-weight: bold;
+    fill: white;
+    text-anchor: middle;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* PROVINCIA DETAIL PAGE */
+.provincia-content {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: slideIn 0.5s ease-out;
+}
+
+.provincia-header {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 5px solid #667eea;
+    padding-bottom: 20px;
+}
+
+.provincia-header h1 {
+    color: #667eea;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.provincia-header .region {
+    color: #764ba2;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Comic Sans MS', cursive;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.back-button:hover {
+    transform: scale(1.05);
+}
+
+/* INFO GRID */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.info-card h3 {
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.info-card .value {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+/* DESCRIPTION */
+.description {
+    background: #f0f4ff;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+.description h2 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.description p {
+    color: #333;
+    font-size: 1.1em;
+}
+
+/* CURIOSIDADES */
+.curiosidades {
+    background: #fff5e1;
+    border-left: 5px solid #ffc107;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.curiosidades h2 {
+    color: #ff9800;
+    margin-bottom: 15px;
+}
+
+.curiosidades ul {
+    list-style-position: inside;
+    line-height: 2;
+}
+
+.curiosidades li {
+    color: #333;
+    font-size: 1.05em;
+}
+
+/* PUNTOS DE INTERES */
+.puntos-interes {
+    background: #e8f5e9;
+    border-left: 5px solid #4caf50;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.puntos-interes h2 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+}
+
+.puntos-interes ul {
+    list-style-position: inside;
+    line-height: 2;
+}
+
+.puntos-interes li {
+    color: #333;
+    font-size: 1.05em;
+}
+
+/* PLATOS TIPICOS */
+.platos {
+    background: #fce4ec;
+    border-left: 5px solid #e91e63;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.platos h2 {
+    color: #c2185b;
+    margin-bottom: 15px;
+}
+
+/* SITE HEADER & FOOTER */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+.site-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.site-header .logo img {
+    height: 56px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.site-title-text h1 {
+    font-size: 1.6em;
+    margin: 0;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.25);
+}
+.site-title-text p {
+    margin: 0;
+    font-size: 0.95em;
+    opacity: 0.95;
+}
+.nav-links {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.nav-links a.btn-control { padding: 8px 14px; min-width: auto; }
+
+.site-footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #fff;
+    padding: 18px 12px;
+    background: rgba(0,0,0,0.18);
+    border-radius: 12px;
+}
+.site-footer .social-links {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 8px;
+}
+.site-footer .social-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.04);
+    transition: background 0.15s, transform 0.12s;
+}
+.site-footer .social-links a:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+
+@media (max-width: 720px) {
+    .site-header { flex-direction: column; text-align: center; }
+    .nav-links { justify-content: center; }
+}
+
+.platos ul {
+    list-style-position: inside;
+    line-height: 2;
+}
+
+.platos li {
+    color: #333;
+    font-size: 1.05em;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE TRADICIONAL */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.8em;
+    }
+
+    .provincia-content {
+        padding: 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contenedor-ranking-global {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .columna-ranking, .columna-controles {
+        width: 100%;
+        flex: none;
+    }
+}
+
+

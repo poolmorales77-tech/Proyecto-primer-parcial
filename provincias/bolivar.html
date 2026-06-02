@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolívar - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Botón para regresar al mapa principal -->
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Bolívar 🏔️</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <!-- Grilla de información rápida -->
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Guaranda</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">183,641</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">3,254 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/bolivar.png" alt="Paisaje de la Provincia de Bolívar" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <!-- Descripción general -->
+            <div class="description">
+                <h2>Sobre Bolívar</h2>
+                <p>Bolívar es una provincia ubicada en la sierra central del Ecuador, entre Tungurahua y Chimborazo. Es una de las provincias más pequeñas del país. Guaranda es su capital, conocida como la "Tierra de las Siete Colinas" por sus características geográficas. Es una provincia principalmente agrícola, comunitaria e indígena.</p>
+            </div>
+
+            <!-- Datos curiosos -->
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Guaranda es conocida como "La Tierra de las Siete Colinas".</li>
+                    <li>Bolívar es una de las provincias más pequeñas del Ecuador.</li>
+                    <li>Es un importantísimo centro cultural indígena y comunitario (ej. Salinas de Guaranda).</li>
+                    <li>Su famoso Carnaval de Guaranda es Patrimonio Cultural del Ecuador.</li>
+                </ul>
+            </div>
+
+            <!-- Lugares turísticos corregidos para la provincia de Bolívar -->
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Guaranda y sus Siete Colinas</li>
+                    <li>Salinas de Guaranda (Minas de sal y empresas comunitarias)</li>
+                    <li>Santuario de la Virgen del Guayco</li>
+                    <li>Bosque Protector Cashca Totoras</li>
+                    <li>El Camino Real (Sitio histórico)</li>
+                    <li>Plaza Roja en Guaranda</li>
+                </ul>
+            </div>
+
+            <!-- Gastronomía típica -->
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de gallina criolla</li>
+                    <li>Llapingachos</li>
+                    <li>Cuy al horno</li>
+                    <li>Chigüiles (Típicos de la zona)</li>
+                    <li>Mote con chicharrón</li>
+                    <li>El famoso Pájaro Azul (Bebida tradicional)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Quiz interactivo sobre Bolívar -->
+        <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); color: #333;">
+            <h2>🧩 Quiz: ¿Cuánto sabes de Bolívar?</h2>
+            <form id="quiz-bolivar">
+                <div style="margin-bottom: 15px;">
+                    <label><b>¿Cuál es la capital de Bolívar?</b></label><br>
+                    <input type="radio" name="q1" value="Guaranda" data-correcta="true"> Guaranda<br>
+                    <input type="radio" name="q1" value="Quito"> Quito<br>
+                    <input type="radio" name="q1" value="Ambato"> Ambato
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label><b>¿Por qué es conocida Guaranda?</b></label><br>
+                    <input type="radio" name="q2" value="Siete Colinas" data-correcta="true"> Por las Siete Colinas<br>
+                    <input type="radio" name="q2" value="Por su playa"> Por su playa<br>
+                    <input type="radio" name="q2" value="Por su volcán"> Por su volcán
+                </div>
+                <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em; cursor: pointer;">Responder</button>
+            </form>
+            <div id="quiz-bolivar-resultado" style="margin-top: 15px; font-weight: bold;"></div>
+        </div>
+    </div>
+
+    <!-- Carga del script general antes de la lógica local -->
+    <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-bolivar').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('bolivar')) {
+                    document.getElementById('quiz-bolivar-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('bolivar');
+                marcarProvinciaVisitada('bolivar');
+            });
+            </script>
+</body>
+</html>

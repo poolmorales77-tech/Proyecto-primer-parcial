@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Oro - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>El Oro 💛</h1>
+                <p class="region">Región: Costa</p>
+            </div>
+            <div class="modelo-3d-container" style="text-align: center; margin: 20px auto; max-width: 400px;">
+                <h3 style="margin-bottom: 8px; font-size: 1.1em; color: #555;">Vista Interactiva 3D</h3>
+                <model-viewer 
+                    src="../3d/palmera.glb" 
+                    alt="Modelo 3D de Esmeraldas" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 250px; background-color: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+                </model-viewer>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Machala</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">600,659</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">5,823 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/eloro.jpg" alt="Paisaje de la Provincia de El Oro" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre El Oro</h2>
+                <p>El Oro es una provincia ubicada en la costa sur del Ecuador, en la frontera con Perú. Su nombre se debe a la importancia histórica que tuvo la extracción de oro en la región. Actualmente es importante por la producción de banano y cacao. Machala es su capital y es conocida como la "Capital Bananera del Mundo".</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Machala es la "Capital Bananera del Mundo" por su producción de banano</li>
+                    <li>El Oro limita con Perú en su frontera sur</li>
+                    <li>Fue importante centro minero en tiempos coloniales</li>
+                    <li>Tiene playas hermosas y manglares</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Puerto de Machala</li>
+                    <li>Playas de Zarumilla</li>
+                    <li>Manglares de San Lorenzo</li>
+                    <li>Isla de Jambelí</li>
+                    <li>Parque Arqueológico</li>
+                    <li>Mercado de banano</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Langostinos apanados</li>
+                    <li>Ceviche de camarón</li>
+                    <li>Sopa de mariscos</li>
+                    <li>Chuleta de res</li>
+                    <li>Banano maduro frito</li>
+                    <li>Tamales de carne</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre El Oro -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de El Oro?</h2>
+                <form id="quiz-el-oro">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de la provincia de El Oro y conocida como la "Capital Bananera del Mundo"?</b></label><br>
+                        <input type="radio" name="q1" value="Machala" data-correcta="true"> Machala<br>
+                        <input type="radio" name="q1" value="Guayaquil"> Guayaquil<br>
+                        <input type="radio" name="q1" value="Loja"> Loja
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Con qué país limita El Oro en su frontera sur?</b></label><br>
+                        <input type="radio" name="q2" value="Colombia"> Colombia<br>
+                        <input type="radio" name="q2" value="Perú" data-correcta="true"> Perú<br>
+                        <input type="radio" name="q2" value="Brasil"> Brasil
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-el-oro-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-el-oro').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('el-oro')) {
+                    document.getElementById('quiz-el-oro-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('el-oro');
+                marcarProvinciaVisitada('el-oro');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

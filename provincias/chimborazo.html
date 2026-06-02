@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chimborazo - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Chimborazo ⛰️</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Riobamba</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">478,499</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">6,569 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/chimborazo.jpg" alt="Paisaje de la Provincia de Chimborazo" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Chimborazo</h2>
+                <p>Chimborazo es una provincia ubicada en la sierra central del Ecuador. El Volcán Chimborazo es la montaña más alta de Ecuador con 6,268 metros de altura. Riobamba es su capital, conocida como la "Sultana de los Andes". Chimborazo fue importante centro administrativo e indígena en tiempos prehispánicos.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>El Volcán Chimborazo es la montaña más alta del Ecuador (6,268 m)</li>
+                    <li>Es el punto más distante del centro de la Tierra (por el achatamiento terrestre)</li>
+                    <li>Riobamba fue destruida en el terremoto de 1797</li>
+                    <li>Fue un importante centro indígena antes de la conquista</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Volcán Chimborazo</li>
+                    <li>Riobamba</li>
+                    <li>Laguna de Cebollapamba</li>
+                    <li>Parque Nacional Sangay</li>
+                    <li>Plaza de Armas de Riobamba</li>
+                    <li>Comunidades indígenas Puruhá</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de papa</li>
+                    <li>Locro de papa</li>
+                    <li>Mote con queso</li>
+                    <li>Empanadas de queso</li>
+                    <li>Fritada</li>
+                    <li>Cuy al horno</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Chimborazo -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Chimborazo?</h2>
+                <form id="quiz-chimborazo">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de la provincia de Chimborazo?</b></label><br>
+                        <input type="radio" name="q1" value="Riobamba" data-correcta="true"> Riobamba<br>
+                        <input type="radio" name="q1" value="Ambato"> Ambato<br>
+                        <input type="radio" name="q1" value="Latacunga"> Latacunga
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Por qué el Volcán Chimborazo es famoso a nivel mundial además de su altura?</b></label><br>
+                        <input type="radio" name="q2" value="centro"> Porque está justo en el centro geográfico del país<br>
+                        <input type="radio" name="q2" value="distante" data-correcta="true"> Porque es el punto más distante del centro de la Tierra<br>
+                        <input type="radio" name="q2" value="activo"> Porque es el volcán más activo del continente
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-chimborazo-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-chimborazo').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('chimborazo')) {
+                    document.getElementById('quiz-chimborazo-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('chimborazo');
+                marcarProvinciaVisitada('chimborazo');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

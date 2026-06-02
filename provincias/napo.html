@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Napo - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Napo 🌿</h1>
+                <p class="region">Región: Amazonia</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Tena</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">103,697</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">12,383 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/napo.jpg" alt="Paisaje de la Provincia de Napo" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Napo</h2>
+                <p>Napo es una provincia amazónica ubicada en el oriente del Ecuador. Su nombre proviene del Río Napo, que es un importante afluente del Amazonas. La provincia es conocida por su ecoturismo, biodiversidad extraordinaria y sus pueblos indígenas. Tena es su capital y es importante centro de turismo amazónico.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>El Río Napo es uno de los principales afluentes del Amazonas</li>
+                    <li>Tena es la capital del ecoturismo amazónico en Ecuador</li>
+                    <li>Tiene excepcional biodiversidad de selva tropical</li>
+                    <li>Hogar de varios pueblos indígenas</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Río Napo</li>
+                    <li>Comunidades indígenas Kichwa</li>
+                    <li>Cascada de Ahuano</li>
+                    <li>Eco-lodges</li>
+                    <li>Parque Nacional Sumaco</li>
+                    <li>Kayaking en ríos</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de camotillo</li>
+                    <li>Tilapia a la sal</li>
+                    <li>Chonta frita</li>
+                    <li>Ayampacos</li>
+                    <li>Yuca con salsa de camarón</li>
+                    <li>Caldo de maní</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Napo con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Napo?</h2>
+                <form id="quiz-napo">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de Napo, reconocida como la capital del ecoturismo amazónico en Ecuador?</b></label><br>
+                        <input type="radio" name="q1" value="Puyo"> Puyo<br>
+                        <input type="radio" name="q1" value="Macas"> Macas<br>
+                        <input type="radio" name="q1" value="Tena" data-correcta="true"> Tena
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué destaca geográficamente sobre el Río Napo según las curiosidades de la provincia?</b></label><br>
+                        <input type="radio" name="q2" value="afluente" data-correcta="true"> Es uno de los principales afluentes del Amazonas<br>
+                        <input type="radio" name="q2" value="desemboca"> Desemboca directamente en el Océano Pacífico<br>
+                        <input type="radio" name="q2" value="seco"> Es un río estacional que permanece seco la mitad del año
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-napo-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-napo').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('napo')) {
+                    document.getElementById('quiz-napo-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('napo');
+                marcarProvinciaVisitada('napo');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Ríos - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Los Ríos 🌾</h1>
+                <p class="region">Región: Costa</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Babahoyo</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">778,115</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">7,105 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/losrios.png" alt="Paisaje de la Provincia de Los Ríos" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Los Ríos</h2>
+                <p>Los Ríos es una provincia costera ubicada en la región de Costa. Su nombre proviene de los ríos que la atraviesan. Es una provincia importante para la agricultura, especialmente para la producción de arroz y otros cultivos. Babahoyo es su capital y se encuentra a orillas del Río Babahoyo.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Babahoyo fue capital del Ecuador en el siglo XIX</li>
+                    <li>La provincia es una de las principales productoras de arroz</li>
+                    <li>Los Ríos tiene una importante red fluvial</li>
+                    <li>Es la puerta de entrada a la costa desde la sierra</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Malecón de Babahoyo</li>
+                    <li>Iglesia de Babahoyo</li>
+                    <li>Parque Forestal</li>
+                    <li>Rio Babahoyo</li>
+                    <li>Playas cercanas</li>
+                    <li>Haciendas de arroz</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Arroz con camarones</li>
+                    <li>Bollo de verde</li>
+                    <li>Humita</li>
+                    <li>Chuleta con arroz</li>
+                    <li>Tamales de verde</li>
+                    <li>Yuca frita con salsa</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Los Ríos con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Los Ríos?</h2>
+                <form id="quiz-los-rios">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál de los siguientes datos es una curiosidad histórica sobre Babahoyo, la capital de la provincia?</b></label><br>
+                        <input type="radio" name="q1" value="oro"> Fue el asentamiento minero de oro más grande de la colonia<br>
+                        <input type="radio" name="q1" value="capital" data-correcta="true"> Fue capital del Ecuador durante el siglo XIX<br>
+                        <input type="radio" name="q1" value="destruida"> Fue completamente destruida por el volcán Chimborazo
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Por qué cultivo agrícola destaca principalmente la provincia de Los Ríos?</b></label><br>
+                        <input type="radio" name="q2" value="papas"> Cultivo intensivo de papas de la sierra<br>
+                        <input type="radio" name="q2" value="uvas"> Viñedos y exportación de uvas de mesa<br>
+                        <input type="radio" name="q2" value="arroz" data-correcta="true"> Una de las principales productoras de arroz
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-los-rios-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-los-rios').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('los-rios')) {
+                    document.getElementById('quiz-los-rios-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('los-rios');
+                marcarProvinciaVisitada('los-rios');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

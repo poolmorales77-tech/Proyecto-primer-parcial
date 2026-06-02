@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imbabura - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Imbabura 🏞️</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Ibarra</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">398,244</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">4,599 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/imbabura.jpg" alt="Paisaje de la Provincia de Imbabura" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Imbabura</h2>
+                <p>Imbabura es una provincia ubicada en la sierra norte del Ecuador. Su nombre proviene del Volcán Imbabura, considerado sagrado por las culturas prehispánicas. Ibarra es su capital, conocida como "La Ciudad Blanca" por sus construcciones coloniales. La provincia es rica en tradiciones indígenas y culturas ancestrales.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>El Volcán Imbabura fue considerado sagrado por los pueblos prehispánicos</li>
+                    <li>Ibarra es conocida como "La Ciudad Blanca" por sus edificios coloniales</li>
+                    <li>La provincia tiene una importante comunidad indígena Otavalo</li>
+                    <li>Otavalo es famoso por sus textiles y mercados artesanales</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Volcán Imbabura</li>
+                    <li>Mercado indígena de Otavalo</li>
+                    <li>Lago San Pablo</li>
+                    <li>Plaza de Armas de Ibarra</li>
+                    <li>Cascadas de Peguche</li>
+                    <li>Comunidades indígenas</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de papa</li>
+                    <li>Yaguarlocro (morcilla)</li>
+                    <li>Empanadas de queso</li>
+                    <li>Fritada</li>
+                    <li>Tamales de pollo</li>
+                    <li>Bizcocho de Ibarra</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Imbabura con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Imbabura?</h2>
+                <form id="quiz-imbabura">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Por qué pseudónimo colonial es conocida la ciudad de Ibarra, capital de la provincia?</b></label><br>
+                        <input type="radio" name="q1" value="Sultana"> La Sultana de los Andes<br>
+                        <input type="radio" name="q1" value="Blanca" data-correcta="true"> La Ciudad Blanca<br>
+                        <input type="radio" name="q1" value="Atenas"> La Atenas del Ecuador
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué comunidad de Imbabura tiene fama mundial debido a sus coloridos textiles y mercados artesanales?</b></label><br>
+                        <input type="radio" name="q2" value="Otavalo" data-correcta="true"> Otavalo<br>
+                        <input type="radio" name="q2" value="Cañari"> Cañari<br>
+                        <input type="radio" name="q2" value="Puruhá"> Puruhá
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-imbabura-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-imbabura').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('imbabura')) {
+                    document.getElementById('quiz-imbabura-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('imbabura');
+                marcarProvinciaVisitada('imbabura');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastaza - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Pastaza 🦜</h1>
+                <p class="region">Región: Amazonia</p>
+            </div>
+
+            <div class="modelo-3d-container" style="text-align: center; margin: 20px auto; max-width: 400px;">
+                <h3 style="margin-bottom: 8px; font-size: 1.1em; color: #555;">Vista Interactiva 3D</h3>
+                <model-viewer 
+                    src="../3d/selva.glb" 
+                    alt="Modelo 3D de Pastaza" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 250px; background-color: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+                </model-viewer>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Puyo</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">114,002</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">29,654 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/pastaza.jpg" alt="Paisaje de la Provincia de Pastaza" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Pastaza</h2>
+                <p>Pastaza es la provincia más grande del Ecuador, ubicada en el oriente amazónico. Su nombre proviene de la palabra Quichua que significa "río grande". Puyo es su capital, un importante centro de conexión entre la sierra y la amazonia. Pastaza es conocida por su excepcional biodiversidad y sus cascadas espectaculares.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Pastaza es la provincia más grande del Ecuador por área</li>
+                    <li>"Pastaza" significa "río grande" en Quichua</li>
+                    <li>Tiene las cascadas más altas y espectaculares del Ecuador</li>
+                    <li>Es importante centro de ecoturismo amazónico</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Cascada de Manto de la Novia</li>
+                    <li>Río Pastaza</li>
+                    <li>Comunidades indígenas Achuar</li>
+                    <li>Piscinas naturales</li>
+                    <li>Reserva faunística Cuyabeno</li>
+                    <li>Ecoturismo de selva</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de pescado amazónico</li>
+                    <li>Chonta a la brasa</li>
+                    <li>Tilapia frita</li>
+                    <li>Ayampacos</li>
+                    <li>Caldo de camarones</li>
+                    <li>Humita amazónica</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Pastaza con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Pastaza?</h2>
+                <form id="quiz-pastaza">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es el significado de la palabra Quichua "Pastaza" según los datos provinciales?</b></label><br>
+                        <input type="radio" name="q1" value="selva"> Selva impenetrable<br>
+                        <input type="radio" name="q1" value="tierra"> Tierra de aves exóticas<br>
+                        <input type="radio" name="q1" value="rio" data-correcta="true"> Río grande
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué récord geográfico ostenta Pastaza dentro del territorio de la República del Ecuador?</b></label><br>
+                        <input type="radio" name="q2" value="grande" data-correcta="true"> Es la provincia más grande del Ecuador por área<br>
+                        <input type="radio" name="q2" value="poblada"> Es la provincia con mayor densidad poblacional de la amazonía<br>
+                        <input type="radio" name="q2" value="pequena"> Es la provincia con el territorio continental más pequeño
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-pastaza-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-pastaza').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('pastaza')) {
+                    document.getElementById('quiz-pastaza-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('pastaza');
+                marcarProvinciaVisitada('pastaza');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

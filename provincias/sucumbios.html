@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sucumbíos - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Sucumbíos 🌲</h1>
+                <p class="region">Región: Amazonia</p>
+            </div>
+
+            <div class="modelo-3d-container" style="text-align: center; margin: 20px auto; max-width: 400px;">
+                <h3 style="margin-bottom: 8px; font-size: 1.1em; color: #555;">Vista Interactiva 3D</h3>
+                <model-viewer 
+                    src="../3d/selva.glb" 
+                    alt="Modelo 3D de Sucumbíos" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 250px; background-color: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+                </model-viewer>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Nueva Loja</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">176,472</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">18,087 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/sucumbios.jpg" alt="Paisaje de la Provincia de Sucumbíos" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Sucumbíos</h2>
+                <p>Sucumbíos es una provincia amazónica ubicada en el noreste del Ecuador, en la frontera con Perú y Colombia. Su nombre proviene del pueblo indígena Sucumbío que habita la región. La provincia es importante por su biodiversidad amazónica, recursos petroleros y sus comunidades indígenas. Nueva Loja es un importante centro extractivo.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Sucumbíos limita con Perú y Colombia</li>
+                    <li>Es importante región petrolifera del Ecuador</li>
+                    <li>Tiene abundante biodiversidad amazónica</li>
+                    <li>Hogar del pueblo indígena Sucumbío</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Reserva Cuyabeno</li>
+                    <li>Comunidades indígenas</li>
+                    <li>Ríos navegables</li>
+                    <li>Laguna Grande</li>
+                    <li>Cabañas ecológicas</li>
+                    <li>Vida selvática</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de camotillo</li>
+                    <li>Pescado a la sal</li>
+                    <li>Chonta frita</li>
+                    <li>Ayampacos</li>
+                    <li>Caldo de maní</li>
+                    <li>Yuca asada</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Sucumbíos con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Sucumbíos?</h2>
+                <form id="quiz-sucumbios">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Con qué países comparte fronteras internacionales la provincia de Sucumbíos en su extremo norte y este?</b></label><br>
+                        <input type="radio" name="q1" value="colombia-peru" data-correcta="true"> Con Perú y Colombia<br>
+                        <input type="radio" name="q1" value="brasil-colombia"> Con Colombia y Brasil<br>
+                        <input type="radio" name="q1" value="solo-peru"> Únicamente con la República del Perú
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de Sucumbíos, descrita en el texto como un importante centro extractivo?</b></label><br>
+                        <input type="radio" name="q2" value="el-coca"> El Coca<br>
+                        <input type="radio" name="q2" value="tena"> Tena<br>
+                        <input type="radio" name="q2" value="nueva-loja" data-correcta="true"> Nueva Loja
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-sucumbios-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-sucumbios').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('sucumbios')) {
+                    document.getElementById('quiz-sucumbios-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('sucumbios');
+                marcarProvinciaVisitada('sucumbios');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Loja 🏔️</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Loja</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">506,113</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">10,790 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/loja.jpg" alt="Paisaje de la Provincia de Loja" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Loja</h2>
+                <p>Loja es una provincia ubicada en la sierra sur del Ecuador, en la frontera con Perú. Es conocida como la "Capital Cultural de Ecuador" por su riqueza en música, literatura y artes. Loja es importante centro académico e intelectual. La provincia tiene una biodiversidad única y es conocida por sus músicos y composiciones.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Loja es conocida como "Capital Cultural de Ecuador"</li>
+                    <li>Es importante centro de música clásica ecuatoriana</li>
+                    <li>Tiene una Universidad muy antigua y prestigiosa</li>
+                    <li>La provincia limita con Perú en su frontera sur</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Centro Histórico de Loja</li>
+                    <li>Catedral Metropolitana</li>
+                    <li>Parque Recreacional</li>
+                    <li>Universidad Nacional de Loja</li>
+                    <li>Podocarpus (bosque protegido)</li>
+                    <li>Vilcabamba (pueblo artístico)</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de papa</li>
+                    <li>Cuy al horno</li>
+                    <li>Mote con queso</li>
+                    <li>Fritada lojana</li>
+                    <li>Empanadas de verde</li>
+                    <li>Colada morada</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Loja con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Loja?</h2>
+                <form id="quiz-loja">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>Por su enorme riqueza en música, literatura y artes, ¿cómo es conocida la provincia de Loja?</b></label><br>
+                        <input type="radio" name="q1" value="industrial"> Capital Industrial del Ecuador<br>
+                        <input type="radio" name="q1" value="cultural" data-correcta="true"> Capital Cultural de Ecuador<br>
+                        <input type="radio" name="q1" value="bananera"> Capital Bananera del Mundo
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál de los siguientes lugares corresponde a un bosque protegido muy importante ubicado en esta provincia?</b></label><br>
+                        <input type="radio" name="q2" value="sangay"> Parque Nacional Sangay<br>
+                        <input type="radio" name="q2" value="limpiopungo"> Laguna de Limpiopungo<br>
+                        <input type="radio" name="q2" value="podocarpus" data-correcta="true"> Podocarpus
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-loja-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-loja').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('loja')) {
+                    document.getElementById('quiz-loja-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('loja');
+                marcarProvinciaVisitada('loja');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

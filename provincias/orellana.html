@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orellana - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Orellana 🌴</h1>
+                <p class="region">Región: Amazonia</p>
+            </div>
+
+            <div class="modelo-3d-container" style="text-align: center; margin: 20px auto; max-width: 400px;">
+                <h3 style="margin-bottom: 8px; font-size: 1.1em; color: #555;">Vista Interactiva 3D</h3>
+                <model-viewer 
+                    src="../3d/selva.glb" 
+                    alt="Modelo 3D de Orellana" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 250px; background-color: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+                </model-viewer>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Fco. de Orellana</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">136,396</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">21,216 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/orellana.jpg" alt="Paisaje de la Provincia de Orellana" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Orellana</h2>
+                <p>Orellana es una provincia amazónica ubicada en el oriente del Ecuador. Fue creada en 1998 y lleva el nombre de Francisco de Orellana, explorador que descubrió el Río Amazonas. La provincia es conocida por su biodiversidad extraordinaria, sus pueblos indígenas y sus ríos navegables. Es importante centro petrolero del Ecuador.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Francisco de Orellana fue el descubridor del Río Amazonas</li>
+                    <li>Es una de las provincias más jóvenes del Ecuador</li>
+                    <li>Tiene una biodiversidad amazónica incomparable</li>
+                    <li>Es importante centro de recursos petroleros</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Río Napo</li>
+                    <li>Cabañas ecológicas</li>
+                    <li>Reserva Yasuni</li>
+                    <li>Comunidades indígenas</li>
+                    <li>Cascadas amazónicas</li>
+                    <li>Vida silvestre</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de pescado amazónico</li>
+                    <li>Chonta frita</li>
+                    <li>Tilapia a la sal</li>
+                    <li>Ayampacos</li>
+                    <li>Arroz con camarones</li>
+                    <li>Yuca con salsa</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Orellana con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Orellana?</h2>
+                <form id="quiz-orellana">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿A qué importante recurso económico de la provincia se hace mención en sus curiosidades?</b></label><br>
+                        <input type="radio" name="q1" value="oro"> Gran minería de oro y plata colonial<br>
+                        <input type="radio" name="q1" value="petroleo" data-correcta="true"> Importante centro de recursos petroleros<br>
+                        <input type="radio" name="q1" value="atun"> Puerto principal de pesca de atún de exportación
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de esta provincia amazónica, creada en el año 1998?</b></label><br>
+                        <input type="radio" name="q2" value="Fco. de Orellana" data-correcta="true"> Fco. de Orellana<br>
+                        <input type="radio" name="q2" value="Puyo"> Puyo<br>
+                        <input type="radio" name="q2" value="Nueva Loja"> Nueva Loja
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-orellana-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-orellana').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('orellana')) {
+                    document.getElementById('quiz-orellana-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('orellana');
+                marcarProvinciaVisitada('orellana');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

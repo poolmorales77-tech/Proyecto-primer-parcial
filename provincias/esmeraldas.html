@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esmeraldas - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Esmeraldas 💎</h1>
+                <p class="region">Región: Costa</p>
+            </div>
+
+            <div class="modelo-3d-container" style="text-align: center; margin: 20px auto; max-width: 400px;">
+                <h3 style="margin-bottom: 8px; font-size: 1.1em; color: #555;">Vista Interactiva 3D</h3>
+                <model-viewer 
+                    src="../3d/palmera.glb" 
+                    alt="Modelo 3D de Esmeraldas" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 250px; background-color: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+                </model-viewer>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Esmeraldas</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">536,303</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">14,893 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/esmeraldas.jpg" alt="Paisaje de la Provincia de Esmeraldas" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Esmeraldas</h2>
+                <p>Esmeraldas es una provincia ubicada en la costa norte del Ecuador. Su nombre se debe a las piedras preciosas que se encontraban en la región. Es importante por sus playas, recursos naturales y la presencia del Océano Pacífico. La provincia tiene una rica biodiversidad y es puerta de entrada a la región amazónica.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Su nombre viene de las esmeraldas que se encontraban en la antigüedad</li>
+                    <li>Es la provincia más al norte en la costa del Ecuador</li>
+                    <li>Tiene playas salvajes y relativamente vírgenes</li>
+                    <li>Es importante puerto petrolero del Ecuador</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Playas de Atacames</li>
+                    <li>Playas de Sua</li>
+                    <li>Camarones Beach</li>
+                    <li>Manglares de Muisne</li>
+                    <li>Isla de Muisne</li>
+                    <li>Playas de Tonsupa</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Ceviche de camarones</li>
+                    <li>Encebollado</li>
+                    <li>Corvina apanada</li>
+                    <li>Cazuela de mariscos</li>
+                    <li>Encocado de camarones</li>
+                    <li>Bollos de verde</li>
+                </ul>
+            </div>
+
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Esmeraldas?</h2>
+                <form id="quiz-esmeraldas">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿A qué se debe el nombre de esta provincia costeña?</b></label><br>
+                        <input type="radio" name="q1" value="piedras" data-correcta="true"> A las piedras preciosas que se encontraban en la región en la antigüedad<br>
+                        <input type="radio" name="q1" value="selva"> Al color verde de su densa vegetación selvática<br>
+                        <input type="radio" name="q1" value="rio"> Al nombre de un navegante español que la descubrió
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué infraestructura industrial importante destaca en Esmeraldas según sus curiosidades?</b></label><br>
+                        <input type="radio" name="q2" value="hidro"> Una gran central hidroeléctrica<br>
+                        <input type="radio" name="q2" value="petrolero" data-correcta="true"> Un importante puerto petrolero<br>
+                        <input type="radio" name="q2" value="automotriz"> Una fábrica de ensamblaje automotriz
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-esmeraldas-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <script src="../js/script.js"></script>
+            <script>
+            document.getElementById('quiz-esmeraldas').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('esmeraldas')) {
+                    document.getElementById('quiz-esmeraldas-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('esmeraldas');
+                marcarProvinciaVisitada('esmeraldas');
+            });
+            </script>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carchi - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Carchi ❄️</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Tulcán</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">183,641</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">3,605 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/carchi.png" alt="Paisaje de la Provincia de Carchi" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Carchi</h2>
+                <p>Carchi es una provincia ubicada en la sierra norte del Ecuador, en la frontera con Colombia. Es la provincia más septentrional del país. Tulcán, su capital, está a 2,960 metros de altura y es una importante puerta de entrada al Ecuador desde Colombia. Tiene un clima frío característico de la sierra norte.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Tulcán es la segunda ciudad más alta del Ecuador</li>
+                    <li>Carchi limita directamente con Colombia</li>
+                    <li>El Cementerio de Tulcán tiene topiarios únicos en América</li>
+                    <li>Es importante centro comercial en la frontera norte</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Cementerio de Tulcán</li>
+                    <li>Volcán Chiles</li>
+                    <li>Laguna de La Bolsa</li>
+                    <li>Aguas termales de Tufiño</li>
+                    <li>Plaza de Armas de Tulcán</li>
+                    <li>Puente de Rumichaca</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de papa</li>
+                    <li>Locro de papa</li>
+                    <li>Empanadas de verde</li>
+                    <li>Trucha frita</li>
+                    <li>Mote con queso</li>
+                    <li>Pan de queso</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Carchi -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Carchi?</h2>
+                <form id="quiz-carchi">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de la provincia de Carchi?</b></label><br>
+                        <input type="radio" name="q1" value="Tulcán" data-correcta="true"> Tulcán<br>
+                        <input type="radio" name="q1" value="Ibarra"> Ibarra<br>
+                        <input type="radio" name="q1" value="Esmeraldas"> Esmeraldas
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué famoso lugar turístico de Carchi destaca por sus figuras verdes talladas en árboles (topiarios)?</b></label><br>
+                        <input type="radio" name="q2" value="Volcán Chiles"> El Volcán Chiles<br>
+                        <input type="radio" name="q2" value="Cementerio de Tulcán" data-correcta="true"> El Cementerio de Tulcán<br>
+                        <input type="radio" name="q2" value="Puente de Rumichaca"> El Puente de Rumichaca
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-carchi-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-carchi').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('carchi')) {
+                    document.getElementById('quiz-carchi-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('carchi');
+                marcarProvinciaVisitada('carchi');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>
+

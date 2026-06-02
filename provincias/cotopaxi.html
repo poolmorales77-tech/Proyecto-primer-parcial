@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotopaxi - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Cotopaxi 🌋</h1>
+                <p class="region">Región: Sierra</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Latacunga</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">409,205</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">6,569 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/cotopaxi.jpg" alt="Paisaje de la Provincia de Cotopaxi" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Cotopaxi</h2>
+                <p>Cotopaxi es una provincia ubicada en la sierra central del Ecuador. El Volcán Cotopaxi es uno de los volcanes más altos del mundo a 5,897 metros y es considerado uno de los más activos. Latacunga es su capital, ubicada en un valle fértil. Cotopaxi es importante por su biodiversidad y recursos naturales.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>El Volcán Cotopaxi es uno de los volcanes más altos y activos del mundo</li>
+                    <li>En 1877 tuvo una erupción devastadora</li>
+                    <li>Latacunga ha sido reconstruida varias veces por terremotos</li>
+                    <li>La provincia es importante por sus páramos y biodiversidad</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Volcán Cotopaxi</li>
+                    <li>Parque Nacional Cotopaxi</li>
+                    <li>Laguna de Limpiopungo</li>
+                    <li>Latacunga</li>
+                    <li>Hacienda San Agustín</li>
+                    <li>Páramos de Cotopaxi</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Llapingachos</li>
+                    <li>Caldo de papa</li>
+                    <li>Locro</li>
+                    <li>Humita</li>
+                    <li>Empanadas</li>
+                    <li>Fritada</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Cotopaxi -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Cotopaxi?</h2>
+                <form id="quiz-cotopaxi">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de la provincia de Cotopaxi?</b></label><br>
+                        <input type="radio" name="q1" value="Latacunga" data-correcta="true"> Latacunga<br>
+                        <input type="radio" name="q1" value="Quito"> Quito<br>
+                        <input type="radio" name="q1" value="Riobamba"> Riobamba
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Aproximadamente cuántos metros de altura tiene el volcán Cotopaxi?</b></label><br>
+                        <input type="radio" name="q2" value="3000"> Alrededor de 3,500 metros<br>
+                        <input type="radio" name="q2" value="5897" data-correcta="true"> Casi 5,900 metros (5,897 m)<br>
+                        <input type="radio" name="q2" value="7000"> Más de 7,000 metros
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-cotopaxi-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-cotopaxi').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('cotopaxi')) {
+                    document.getElementById('quiz-cotopaxi-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('cotopaxi');
+                marcarProvinciaVisitada('cotopaxi');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

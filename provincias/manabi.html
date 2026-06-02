@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manabí - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Manabí 🏖️</h1>
+                <p class="region">Región: Costa</p>
+            </div>
+
+            <div class="modelo-3d-container" style="text-align: center; margin: 20px auto; max-width: 400px;">
+                <h3 style="margin-bottom: 8px; font-size: 1.1em; color: #555;">Vista Interactiva 3D</h3>
+                <model-viewer 
+                    src="../3d/palmera.glb" 
+                    alt="Modelo 3D de Esmeraldas" 
+                    auto-rotate 
+                    camera-controls 
+                    style="width: 100%; height: 250px; background-color: #f9f9f9; border-radius: 12px; border: 1px solid #eee;">
+                </model-viewer>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Portoviejo</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">1,369,780</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">18,554 km²</div>
+                </div>
+            </div>
+
+             <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/manabi.jpg" alt="Paisaje de la Provincia de Manabí" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <p>Manabí es una provincia costera ubicada en la región de Costa del Ecuador. Es conocida por sus hermosas playas, su tradición en la producción de sombreros Panamá (hechos en Ecuador), y su riqueza en recursos naturales. La provincia es importante por la pesca y el turismo.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Los famosos "sombreros Panamá" realmente se hacen en Manabí, Ecuador</li>
+                    <li>Manta es un importante puerto de pesca tú atún</li>
+                    <li>La provincia tiene algunas de las playas más hermosas del Ecuador</li>
+                    <li>Fue afectada por un fuerte terremoto en 2016</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Playas de Manta</li>
+                    <li>Puerto López (ballenas)</li>
+                    <li>Salinas de Guaranda</li>
+                    <li>Iglesia de Portoviejo</li>
+                    <li>Reserva de Machalilla</li>
+                    <li>Canoa</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Cazuela de mariscos</li>
+                    <li>Caldo de camotillo</li>
+                    <li>Viche</li>
+                    <li>Yuca con queso</li>
+                    <li>Chuleta con verde</li>
+                    <li>Empanadas de queso</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Manabí con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Manabí?</h2>
+                <form id="quiz-manabi">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué prenda artesanal mundialmente famosa se confecciona realmente en Manabí aunque lleve el nombre de otro país?</b></label><br>
+                        <input type="radio" name="q1" value="ponchos"> Los ponchos andinos de lana de alpaca<br>
+                        <input type="radio" name="q1" value="sombreros" data-correcta="true"> Los famosos "sombreros Panamá"<br>
+                        <input type="radio" name="q1" value="chullos"> Los chullos tejidos de colores ancestrales
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital administrativa de la provincia de Manabí?</b></label><br>
+                        <input type="radio" name="q2" value="Portoviejo" data-correcta="true"> Portoviejo<br>
+                        <input type="radio" name="q2" value="Manta"> Manta<br>
+                        <input type="radio" name="q2" value="Chone"> Chone
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-manabi-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-manabi').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('manabi')) {
+                    document.getElementById('quiz-manabi-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('manabi');
+                marcarProvinciaVisitada('manabi');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Santo Domingo de los Tsáchilas - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Santo Domingo de los Tsáchilas 🌴</h1>
+                <p class="region">Región: Costa</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Santo Domingo</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">368,013</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">3,757 km²</div>
+                </div>
+            </div>
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/santo-domingo.jpg" alt="Paisaje de la Provincia de Santo Domingo de los Tsáchilas" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+
+            <div class="description">
+                <h2>Sobre Santo Domingo de los Tsáchilas</h2>
+                <p>Santo Domingo de los Tsáchilas es una provincia joven, creada en 2000. Se ubica entre la sierra y la costa, siendo una región de transición ecológica. Su nombre rinde homenaje al pueblo indígena Tsáchila que habita la región. Santo Domingo es su capital y una importante puerta de entrada a la costa desde Quito.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Santo Domingo de los Tsáchilas fue creada como provincia en 2000</li>
+                    <li>Es hogar del pueblo indígena Tsáchila</li>
+                    <li>Tiene biodiversidad única por ser zona de transición</li>
+                    <li>Santo Domingo es conocido como la "Puerta de la Costa"</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Comunidades indígenas Tsáchila</li>
+                    <li>Centro Tsáchila</li>
+                    <li>Reservas naturales</li>
+                    <li>Cascadas de Sto. Domingo</li>
+                    <li>Plaza Cívica</li>
+                    <li>Mercados locales</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Caldo de pollo</li>
+                    <li>Arroz con camarones</li>
+                    <li>Ceviche</li>
+                    <li>Bollo de verde</li>
+                    <li>Chuleta con yuca</li>
+                    <li>Tilapia frita</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Santo Domingo de los Tsáchilas con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Santo Domingo de los Tsáchilas?</h2>
+                <form id="quiz-santo-domingo">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Por qué apelativo característico es conocida la ciudad de Santo Domingo debido a su ubicación geográfica estratégica?</b></label><br>
+                        <input type="radio" name="q1" value="isla"> La Isla Interior de la Región Costa<br>
+                        <input type="radio" name="q1" value="puerta" data-correcta="true"> La "Puerta de la Costa"<br>
+                        <input type="radio" name="q1" value="balcon"> El Balcón de los Andes Occidentales
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿A qué comunidad indígena ancestral rinde homenaje el nombre de esta provincia creada en el año 2000?</b></label><br>
+                        <input type="radio" name="q2" value="tsachila" data-correcta="true"> Al pueblo Tsáchila<br>
+                        <input type="radio" name="q2" value="shuar"> Al pueblo Shuar<br>
+                        <input type="radio" name="q2" value="kichwa"> Al pueblo Kichwa de la sierra
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-santo-domingo-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-santo-domingo').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('santo-domingo')) {
+                    document.getElementById('quiz-santo-domingo-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('santo-domingo');
+                marcarProvinciaVisitada('santo-domingo');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>

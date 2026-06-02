@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guayas - Provincias del Ecuador</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <button class="back-button" onclick="window.history.back()">← Volver al mapa</button>
+        
+        <div class="provincia-content">
+            <div class="provincia-header">
+                <h1>Guayas 🌊</h1>
+                <p class="region">Región: Costa</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Capital</h3>
+                    <div class="value">Guayaquil</div>
+                </div>
+                <div class="info-card">
+                    <h3>Población</h3>
+                    <div class="value">3,645,500</div>
+                </div>
+                <div class="info-card">
+                    <h3>Área</h3>
+                    <div class="value">20,436 km²</div>
+                </div>
+            </div>
+
+            <div class="imagen-separada-container" style="text-align: center; margin: 30px 0;">
+                <img src="../images/guayas.jpg" alt="Paisaje de la Provincia de Guayas" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.12);">
+            </div>
+
+            <div class="description">
+                <h2>Sobre Guayas</h2>
+                <p>Guayas es la provincia más poblada del Ecuador. Su capital, Guayaquil, es la ciudad más grande del país y el principal puerto comercial del Ecuador. La provincia es el motor económico del país, especialmente en industrias como el cacao, banano y camarón. Tiene hermosas playas y manglares.</p>
+            </div>
+
+            <div class="curiosidades">
+                <h2>🤓 Curiosidades</h2>
+                <ul>
+                    <li>Guayaquil fue fundada en 1534 por Sebastián de Benalcázar</li>
+                    <li>Es la puerta de entrada al mar para todo el comercio ecuatoriano</li>
+                    <li>El Malecón 2000 es uno de los principales atractivos turísticos</li>
+                    <li>La provincia exporta miles de contenedores de banano cada año</li>
+                </ul>
+            </div>
+
+            <div class="puntos-interes">
+                <h2>🎯 Lugares para Visitar</h2>
+                <ul>
+                    <li>Malecón 2000</li>
+                    <li>Parque Histórico</li>
+                    <li>Cementerio Patrimonial</li>
+                    <li>Iglesia de San Francisco</li>
+                    <li>Playas de Playas de Salinas</li>
+                    <li>Playas de Montañita</li>
+                </ul>
+            </div>
+
+            <div class="platos">
+                <h2>🍲 Platos Típicos</h2>
+                <ul>
+                    <li>Ceviches variados</li>
+                    <li>Encocado de pescado</li>
+                    <li>Encebollado</li>
+                    <li>Caldo de mariscos</li>
+                    <li>Patacones</li>
+                    <li>Arroz con camarones</li>
+                </ul>
+            </div>
+
+            <!-- Quiz interactivo sobre Guayas con respuestas mezcladas -->
+            <div class="quiz-provincia" style="background: #fff; border-radius: 15px; margin-top: 30px; padding: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+                <h2>🧩 Quiz: ¿Cuánto sabes de Guayas?</h2>
+                <form id="quiz-guayas">
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Qué industrias convierten a la provincia del Guayas en el motor económico del país?</b></label><br>
+                        <input type="radio" name="q1" value="textil"> Industria textil, minería y artesanías<br>
+                        <input type="radio" name="q1" value="agro" data-correcta="true"> Agroexportación de cacao, banano y camarón<br>
+                        <input type="radio" name="q1" value="petroleo"> Extracción petrolera y refinería de gas
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label><b>¿Cuál es la capital de esta provincia, considerada la ciudad más grande del Ecuador?</b></label><br>
+                        <input type="radio" name="q2" value="Manta"> Manta<br>
+                        <input type="radio" name="q2" value="Machala"> Machala<br>
+                        <input type="radio" name="q2" value="Guayaquil" data-correcta="true"> Guayaquil
+                    </div>
+                    <button type="submit" style="padding: 8px 20px; border-radius: 8px; background: #667eea; color: #fff; border: none; font-size: 1em;">Responder</button>
+                </form>
+                <div id="quiz-guayas-resultado" style="margin-top: 15px; font-weight: bold; color: #333;"></div>
+            </div>
+
+            <!-- ENLACE AL SCRIPT GLOBAL -->
+            <script src="../js/script.js"></script>            <script>
+            document.getElementById('quiz-guayas').addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (quizYaCompletado('guayas')) {
+                    document.getElementById('quiz-guayas-resultado').innerText = 'Ya completaste este quiz.';
+                    return;
+                }
+
+                marcarQuizCompletado('guayas');
+                marcarProvinciaVisitada('guayas');
+            });
+            </script>
+</div>
+    </div>
+</body>
+</html>
